@@ -1,0 +1,238 @@
+/* --- Variables for consistent theme --- */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --dark-bg: #1e293b;
+    --light-bg: #f8fafc;
+    --text-main: #334155;
+    --text-light: #94a3b8;
+    --white: #ffffff;
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-main);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect as needed from the miniproject Navigation */
+.nav-links li a:hover {
+    color: #cbd5e1;
+    text-decoration: underline;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Hover Effect 2 for the buttons*/
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+.outline-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* Hover Effect for the image scaling */
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-bg);
+}
+
+.hidden-fact {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hidden-fact.show {
+    opacity: 1;
+}
+
+/* --- Hobbies --- */
+.hobbies-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--dark-bg);
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.hobby-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    /* Hover Effect for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.hobby-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* --- Contact --- */
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    padding: 20px 0;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .about-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
